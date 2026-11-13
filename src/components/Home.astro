@@ -1,6 +1,7 @@
 ---
 import { APP, type Locale } from '../config';
 import { messages } from '../i18n/messages';
+import Logo from './Logo.astro';
 
 interface Props {
   locale: Locale;
@@ -12,26 +13,81 @@ const systems = [
   { os: 'windows', label: t.windows },
   { os: 'linux', label: t.linux },
 ];
+const shotFiles = ['/shots/02-summary-blocked.png', '/shots/03-summary-ready.png'];
 ---
-<section class="hero">
-  <h1>{t.tagline}</h1>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="mark">
+    <Logo size={56} />
+    <p class="label">openjob / {locale}</p>
+  </div>
+  <h1 id="hero-title">{t.tagline}</h1>
   <p class="lede">{t.intro}</p>
+  <div class="actions-row">
+    <a class="btn" href="#download">{t.heroCta}</a>
+    <a class="btn btn-ghost" href="#how">{t.heroCtaSecondary}</a>
+  </div>
+  <pre class="term" aria-hidden="true">{t.termLines.map((line) => `${line}\n`)}</pre>
 </section>
 
-<section class="how">
-  <h2>{t.howTitle}</h2>
+<section class="what" aria-labelledby="what-title">
+  <h2 id="what-title">{t.whatTitle}</h2>
   <ol>
-    {t.steps.map((step) => <li>{step}</li>)}
+    {t.what.map((item, i) => (
+      <li>
+        <span class="idx">{String(i + 1).padStart(2, '0')}</span>
+        <div>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </div>
+      </li>
+    ))}
   </ol>
 </section>
 
-<section class="download" id="download">
-  <h2>{t.downloadTitle}</h2>
+<section class="how" id="how" aria-labelledby="how-title">
+  <h2 id="how-title">{t.howTitle}</h2>
+  <ol class="steps">
+    {t.steps.map((step) => <li>{step}</li>)}
+  </ol>
+  <h3 class="shots-title">{t.shotsTitle}</h3>
+  <div class="shots">
+    {t.shots.map((shot, i) => (
+      <figure>
+        <img src={shotFiles[i]} alt={shot.title} loading="lazy" width="900" height="900" />
+        <figcaption><strong>{shot.title}.</strong> {shot.text}</figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
+
+<section class="examples" aria-labelledby="examples-title">
+  <h2 id="examples-title">{t.examplesTitle}</h2>
+  {t.examples.map((ex) => (
+    <div class="case">
+      <h3>{ex.title}</h3>
+      <p>{ex.text}</p>
+    </div>
+  ))}
+</section>
+
+<section class="community" aria-labelledby="community-title">
+  <h2 id="community-title">{t.communityTitle}</h2>
+  <p>{t.communityText}</p>
+  <h3>{t.costTitle}</h3>
+  <p>{t.costText}</p>
+  <p>{t.contribute}</p>
+  <div class="actions-row">
+    <a class="btn" href={APP.repoUrl}>{t.repoCta}</a>
+  </div>
+</section>
+
+<section class="download" id="download" aria-labelledby="download-title">
+  <h2 id="download-title">{t.downloadTitle}</h2>
   <p class="detected" data-detected hidden>{t.detected}</p>
   <ul class="systems">
     {systems.map((s) => (
       <li data-os={s.os}>
-        <a class="button" href={APP.releasesUrl}>{s.label}</a>
+        <a class="btn" href={APP.releasesUrl}>{s.label}</a>
       </li>
     ))}
   </ul>

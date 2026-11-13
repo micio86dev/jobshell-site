@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import { APP, LOCALES, type Locale } from '../config';
 import { messages } from '../i18n/messages';
+import Logo from '../components/Logo.astro';
 
 interface Props {
   locale: Locale;
@@ -19,24 +20,32 @@ const t = messages[locale];
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f8fb" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1d2026" />
     {LOCALES.map((l) => <link rel="alternate" hreflang={l} href={`/${l}${path}`} />)}
     <link rel="alternate" hreflang="x-default" href={`/en${path}`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <header class="top">
-      <a class="brand" href={`/${locale}/`}>{APP.name}</a>
-      <nav aria-label={t.language} class="langs">
-        {LOCALES.map((l) => (
-          <a href={`/${l}${path}`} hreflang={l} aria-current={l === locale ? 'true' : undefined}>{l.toUpperCase()}</a>
-        ))}
-      </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer class="foot">
-      <p>{t.openSource} <a href={APP.repoUrl}>{t.sourceLink}</a></p>
-      <p><a href={`/${locale}/privacy/`}>{t.privacyLink}</a></p>
-    </footer>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href={`/${locale}/`}>
+          <Logo size={34} />
+          <span>{APP.name}</span>
+        </a>
+        <nav aria-label={t.language} class="langs">
+          {LOCALES.map((l) => (
+            <a href={`/${l}${path}`} hreflang={l} aria-current={l === locale ? 'true' : undefined}>{l.toUpperCase()}</a>
+          ))}
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="foot">
+        <p>{t.openSource} <a href={APP.repoUrl}>{t.sourceLink}</a></p>
+        <p><a href={`/${locale}/privacy/`}>{t.privacyLink}</a></p>
+      </footer>
+    </div>
   </body>
 </html>

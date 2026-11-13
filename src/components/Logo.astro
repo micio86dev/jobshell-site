@@ -1,0 +1,25 @@
+---
+// The mark: a search lens over a terminal prompt, the job search seen from the code side.
+interface Props {
+  size?: number;
+}
+const { size = 40 } = Astro.props;
+---
+<svg class="logo" width={size} height={size} viewBox="0 0 48 48" role="img" aria-label="openjob" focusable="false">
+  <rect x="1" y="1" width="46" height="46" rx="12" class="logo-tile" />
+  <circle cx="22" cy="21" r="10" class="logo-lens" />
+  <path d="M29 28 L36 35" class="logo-handle" />
+  <path d="M16 22 L19 24.5 L16 27" class="logo-prompt" />
+  <path d="M22 27 L27 27" class="logo-prompt" />
+</svg>
+<style>
+  .logo { display: block; flex: none; }
+  .logo-tile { fill: var(--accent); }
+  .logo-lens, .logo-handle, .logo-prompt {
+    fill: none;
+    stroke: var(--accent-fg);
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+</style>

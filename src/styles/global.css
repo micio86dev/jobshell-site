@@ -1,91 +1,240 @@
-/* Restrained palette: tinted neutrals and one accent. Dark mode follows the system setting. */
+/*
+ * Design tokens. Change a colour or a font here and the whole site follows.
+ * Light is the default; dark follows the system setting, and [data-theme] forces either one.
+ */
 :root {
-  --surface: oklch(0.99 0.003 250);
-  --panel: oklch(0.975 0.005 250);
-  --ink: oklch(0.23 0.012 250);
-  --muted: oklch(0.47 0.012 250);
-  --line: oklch(0.87 0.008 250);
-  --accent: oklch(0.5 0.13 255);
-  --accent-hover: oklch(0.45 0.13 255);
-  --on-accent: oklch(0.99 0.003 250);
-  --focus: oklch(0.6 0.15 255);
-  --info-tint: oklch(0.96 0.02 250);
+  /* colour */
+  --bg: oklch(0.985 0.004 250);
+  --bg-raised: oklch(0.965 0.006 250);
+  --fg: oklch(0.22 0.014 250);
+  --fg-muted: oklch(0.46 0.014 250);
+  --border: oklch(0.86 0.01 250);
+  --accent: oklch(0.56 0.14 160);
+  --accent-fg: oklch(0.99 0.003 160);
+  --accent-soft: oklch(0.94 0.04 160);
+  --code-bg: oklch(0.94 0.008 250);
+  --focus: oklch(0.6 0.16 160);
+  --grid-line: oklch(0.9 0.008 250 / 0.6);
+  /* type */
+  --font-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.2rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.9rem, 1.2rem + 3vw, 3rem);
+  /* shape and space */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --gap: 1rem;
+  --page: 62rem;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
-    --surface: oklch(0.2 0.01 250);
-    --panel: oklch(0.24 0.01 250);
-    --ink: oklch(0.94 0.008 250);
-    --muted: oklch(0.72 0.01 250);
-    --line: oklch(0.37 0.01 250);
-    --accent: oklch(0.7 0.12 255);
-    --accent-hover: oklch(0.76 0.12 255);
-    --on-accent: oklch(0.2 0.01 250);
-    --focus: oklch(0.78 0.13 255);
-    --info-tint: oklch(0.28 0.03 250);
+  :root:not([data-theme="light"]) {
+    --bg: oklch(0.19 0.012 250);
+    --bg-raised: oklch(0.23 0.012 250);
+    --fg: oklch(0.94 0.008 250);
+    --fg-muted: oklch(0.72 0.01 250);
+    --border: oklch(0.36 0.012 250);
+    --accent: oklch(0.74 0.15 160);
+    --accent-fg: oklch(0.19 0.012 250);
+    --accent-soft: oklch(0.28 0.05 160);
+    --code-bg: oklch(0.15 0.01 250);
+    --focus: oklch(0.8 0.14 160);
+    --grid-line: oklch(0.3 0.012 250 / 0.5);
   }
 }
+:root[data-theme="dark"] {
+  --bg: oklch(0.19 0.012 250);
+  --bg-raised: oklch(0.23 0.012 250);
+  --fg: oklch(0.94 0.008 250);
+  --fg-muted: oklch(0.72 0.01 250);
+  --border: oklch(0.36 0.012 250);
+  --accent: oklch(0.74 0.15 160);
+  --accent-fg: oklch(0.19 0.012 250);
+  --accent-soft: oklch(0.28 0.05 160);
+  --code-bg: oklch(0.15 0.01 250);
+  --focus: oklch(0.8 0.14 160);
+  --grid-line: oklch(0.3 0.012 250 / 0.5);
+}
+
 * { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
   line-height: 1.6;
-  color: var(--ink);
-  background: var(--surface);
+  color: var(--fg);
+  background-color: var(--bg);
+  /* a faint grid, like graph paper: the code side of the page */
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  background-position: -1px -1px;
 }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-main, .top, .foot { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+a { color: var(--accent); text-underline-offset: 0.2em; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+code, .mono { font-family: var(--font-mono); font-size: 0.92em; }
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin: 0 0 0.5rem;
+}
+.wrap { max-width: var(--page); margin: 0 auto; padding: 0 1.25rem; }
+
+/* header */
 .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   padding-top: 1.25rem;
+  padding-bottom: 1rem;
 }
-.brand { font-weight: 650; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
-.langs { display: flex; gap: 0.5rem; }
-.langs a {
-  font-size: 0.85rem;
-  padding: 0.25rem 0.6rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--fg);
+  font-weight: 700;
+  font-size: var(--text-lg);
   text-decoration: none;
-  color: var(--ink);
+  letter-spacing: -0.01em;
 }
-.langs a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-main { padding-top: 2.5rem; display: grid; gap: 2.5rem; }
-h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 0.75rem; }
-h2 { font-size: 1.2rem; margin: 0 0 0.75rem; }
-.lede { color: var(--muted); font-size: 1.05rem; margin: 0; }
-.how ol { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.4rem; }
+.langs { display: flex; gap: 0.4rem; }
+.langs a {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--fg);
+  text-decoration: none;
+  background: var(--bg);
+}
+.langs a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+
+main { display: grid; gap: 4.5rem; padding-top: 2rem; padding-bottom: 3rem; }
+main > section { scroll-margin-top: 1rem; }
+h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+h1 { font-size: var(--text-2xl); font-weight: 750; }
+h2 { font-size: var(--text-xl); font-weight: 700; margin-bottom: 0.75rem; }
+h3 { font-size: var(--text-lg); font-weight: 650; margin-bottom: 0.35rem; }
+p { margin: 0 0 0.9rem; max-width: 66ch; }
+.lede { font-size: 1.12rem; color: var(--fg-muted); }
+
+/* hero */
+.hero { display: grid; gap: 1.25rem; }
+.hero .mark { display: flex; align-items: center; gap: 0.8rem; }
+.hero .term {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  white-space: pre;
+  margin: 0;
+  color: var(--fg-muted);
+}
+.hero .term b { color: var(--accent); font-weight: 600; }
+.actions-row { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; }
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: var(--accent-fg);
+  font-weight: 650;
+  text-decoration: none;
+}
+.btn:hover { filter: brightness(1.06); }
+.btn-ghost { background: transparent; color: var(--accent); }
+.btn-ghost:hover { background: var(--accent-soft); filter: none; }
+
+/* what it does: a list with a mono index, not identical cards */
+.what ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+.what li { display: grid; grid-template-columns: 3rem 1fr; gap: 0.25rem 1rem; align-items: start; }
+.what li .idx { font-family: var(--font-mono); color: var(--accent); font-size: var(--text-sm); padding-top: 0.2rem; }
+
+/* how it works: screenshots with captions */
+.shots { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+figure { margin: 0; }
+figure img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-raised);
+  display: block;
+}
+figcaption { font-size: var(--text-sm); color: var(--fg-muted); margin-top: 0.5rem; }
+.steps { margin: 1.25rem 0 0; padding-left: 1.25rem; display: grid; gap: 0.4rem; }
+.shots-title { margin: 2.25rem 0 1rem; }
+
+/* examples: a case, written as a short story */
+.case {
+  border-left: 3px solid var(--accent);
+  padding: 0.25rem 0 0.25rem 1.1rem;
+  margin: 0 0 1.25rem;
+}
+.case p:last-child { margin-bottom: 0; }
+
+/* community, cost and repo */
+.community {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
+}
+.community .actions-row { margin-top: 0.75rem; }
+
+/* download */
 .download {
   padding: 1.5rem;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-raised);
 }
-.detected { margin: 0 0 0.75rem; font-weight: 600; color: var(--accent); }
+.detected { margin: 0 0 0.75rem; font-weight: 650; color: var(--accent); }
 .systems { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .systems li { flex: 1 1 9rem; }
-.button {
-  display: block;
-  text-align: center;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--ink);
-  font-weight: 600;
-  text-decoration: none;
+.systems .btn { display: block; text-align: center; background: var(--bg); color: var(--fg); border-color: var(--border); }
+.systems li.recommended .btn { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+.systems .btn:hover { filter: none; background: var(--accent-soft); }
+.notice {
+  margin: 0 0 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  font-size: var(--text-sm);
 }
-.button:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); }
-.systems li.recommended .button { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
-.notice { margin: 0 0 0.75rem; padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--info-tint); font-size: 0.95rem; }
-.privacy p { color: var(--ink); }
-.foot { padding-top: 3rem; padding-bottom: 2rem; color: var(--muted); font-size: 0.9rem; }
+
+/* privacy page */
+.privacy p { max-width: 70ch; }
+
+/* footer */
+.foot {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  color: var(--fg-muted);
+  font-size: var(--text-sm);
+}
 .foot p { margin: 0.25rem 0; }
+
 @media (max-width: 30rem) {
-  h1 { font-size: 1.6rem; }
+  h1 { font-size: 1.8rem; }
+  .what li { grid-template-columns: 2.2rem 1fr; }
   .systems li { flex-basis: 100%; }
 }
