@@ -1,0 +1,91 @@
+/* Restrained palette: tinted neutrals and one accent. Dark mode follows the system setting. */
+:root {
+  --surface: oklch(0.99 0.003 250);
+  --panel: oklch(0.975 0.005 250);
+  --ink: oklch(0.23 0.012 250);
+  --muted: oklch(0.47 0.012 250);
+  --line: oklch(0.87 0.008 250);
+  --accent: oklch(0.5 0.13 255);
+  --accent-hover: oklch(0.45 0.13 255);
+  --on-accent: oklch(0.99 0.003 250);
+  --focus: oklch(0.6 0.15 255);
+  --info-tint: oklch(0.96 0.02 250);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: oklch(0.2 0.01 250);
+    --panel: oklch(0.24 0.01 250);
+    --ink: oklch(0.94 0.008 250);
+    --muted: oklch(0.72 0.01 250);
+    --line: oklch(0.37 0.01 250);
+    --accent: oklch(0.7 0.12 255);
+    --accent-hover: oklch(0.76 0.12 255);
+    --on-accent: oklch(0.2 0.01 250);
+    --focus: oklch(0.78 0.13 255);
+    --info-tint: oklch(0.28 0.03 250);
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--surface);
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+main, .top, .foot { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+}
+.brand { font-weight: 650; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+.langs { display: flex; gap: 0.5rem; }
+.langs a {
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--ink);
+}
+.langs a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+main { padding-top: 2.5rem; display: grid; gap: 2.5rem; }
+h1 { font-size: 2rem; line-height: 1.2; letter-spacing: -0.02em; margin: 0 0 0.75rem; }
+h2 { font-size: 1.2rem; margin: 0 0 0.75rem; }
+.lede { color: var(--muted); font-size: 1.05rem; margin: 0; }
+.how ol { margin: 0; padding-left: 1.25rem; display: grid; gap: 0.4rem; }
+.download {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+.detected { margin: 0 0 0.75rem; font-weight: 600; color: var(--accent); }
+.systems { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.systems li { flex: 1 1 9rem; }
+.button {
+  display: block;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.button:hover { background: var(--accent-hover); border-color: var(--accent-hover); color: var(--on-accent); }
+.systems li.recommended .button { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.notice { margin: 0 0 0.75rem; padding: 0.6rem 0.8rem; border-radius: 8px; background: var(--info-tint); font-size: 0.95rem; }
+.privacy p { color: var(--ink); }
+.foot { padding-top: 3rem; padding-bottom: 2rem; color: var(--muted); font-size: 0.9rem; }
+.foot p { margin: 0.25rem 0; }
+@media (max-width: 30rem) {
+  h1 { font-size: 1.6rem; }
+  .systems li { flex-basis: 100%; }
+}

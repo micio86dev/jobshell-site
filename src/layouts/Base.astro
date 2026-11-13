@@ -1,0 +1,42 @@
+---
+import '../styles/global.css';
+import { APP, LOCALES, type Locale } from '../config';
+import { messages } from '../i18n/messages';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  path: string;
+}
+const { locale, title, description, path } = Astro.props;
+const t = messages[locale];
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {LOCALES.map((l) => <link rel="alternate" hreflang={l} href={`/${l}${path}`} />)}
+    <link rel="alternate" hreflang="x-default" href={`/en${path}`} />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href={`/${locale}/`}>{APP.name}</a>
+      <nav aria-label={t.language} class="langs">
+        {LOCALES.map((l) => (
+          <a href={`/${l}${path}`} hreflang={l} aria-current={l === locale ? 'true' : undefined}>{l.toUpperCase()}</a>
+        ))}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="foot">
+      <p>{t.openSource} <a href={APP.repoUrl}>{t.sourceLink}</a></p>
+      <p><a href={`/${locale}/privacy/`}>{t.privacyLink}</a></p>
+    </footer>
+  </body>
+</html>

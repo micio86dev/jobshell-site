@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import Home from '../../components/Home.astro';
+import { messages } from '../../i18n/messages';
+const locale = 'es' as const;
+const t = messages[locale];
+---
+<Base locale={locale} title={t.title} description={t.tagline} path="/">
+  <Home locale={locale} />
+</Base>

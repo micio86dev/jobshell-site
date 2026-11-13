@@ -1,0 +1,59 @@
+---
+import { APP, type Locale } from '../config';
+import { messages } from '../i18n/messages';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = messages[locale];
+const systems = [
+  { os: 'mac', label: t.mac },
+  { os: 'windows', label: t.windows },
+  { os: 'linux', label: t.linux },
+];
+---
+<section class="hero">
+  <h1>{t.tagline}</h1>
+  <p class="lede">{t.intro}</p>
+</section>
+
+<section class="how">
+  <h2>{t.howTitle}</h2>
+  <ol>
+    {t.steps.map((step) => <li>{step}</li>)}
+  </ol>
+</section>
+
+<section class="download" id="download">
+  <h2>{t.downloadTitle}</h2>
+  <p class="detected" data-detected hidden>{t.detected}</p>
+  <ul class="systems">
+    {systems.map((s) => (
+      <li data-os={s.os}>
+        <a class="button" href={APP.releasesUrl}>{s.label}</a>
+      </li>
+    ))}
+  </ul>
+  <p class="notice"><strong>{t.noticeTitle}.</strong> {t.notice}</p>
+  <p><a href={APP.releasesUrl}>{t.releases}</a></p>
+</section>
+
+<script>
+  // The system is read in the browser only to highlight a download. Nothing is stored or sent.
+  const nav = navigator as Navigator & { userAgentData?: { platform?: string } };
+  const platform = `${nav.userAgentData?.platform ?? nav.platform ?? ''} ${nav.userAgent}`;
+  let detected: string | null = null;
+  if (/Android/i.test(platform)) detected = null;
+  else if (/Win/i.test(platform)) detected = 'windows';
+  else if (/Mac/i.test(platform)) detected = 'mac';
+  else if (/Linux|X11/i.test(platform)) detected = 'linux';
+
+  if (detected !== null) {
+    document.querySelectorAll<HTMLElement>('[data-os]').forEach((item) => {
+      if (item.dataset.os === detected) item.classList.add('recommended');
+    });
+    const note = document.querySelector<HTMLElement>('[data-detected]');
+    if (note) note.hidden = false;
+  }
+</script>

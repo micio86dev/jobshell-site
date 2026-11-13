@@ -1,0 +1,22 @@
+---
+// Sends the visitor to the closest language they read. Nothing is stored and no cookie is set.
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>openjob</title>
+    <script is:inline>
+      const supported = ['it', 'es', 'en'];
+      const wanted = (navigator.languages || [navigator.language || 'en']).map((l) => l.slice(0, 2).toLowerCase());
+      const match = wanted.find((l) => supported.includes(l)) || 'en';
+      location.replace('/' + match + '/');
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href="/it/">Italiano</a> · <a href="/es/">Español</a> · <a href="/en/">English</a>
+    </p>
+  </body>
+</html>
