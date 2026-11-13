@@ -26,7 +26,7 @@ export const messages: Record<Locale, Messages> = {
   en: {
     title: 'openjob, a local job search agent',
     tagline: 'Find the job postings that fit your CV, on your own computer.',
-    intro: 'openjob reads your CV and scores public job postings against it. Your key stays on your computer, and so does your CV text, except when you ask for an analysis: then the text goes to your AI provider. During a search, a summary of your profile and each posting are sent to your AI provider to be scored.',
+    intro: 'openjob reads your CV and scores public job postings against it. Your key is stored on your computer, and so is your CV text, except when you ask for an analysis: then the text goes to your AI provider. During a search, a summary of your profile and each posting are sent to your AI provider to be scored.',
     howTitle: 'How it works',
     steps: ['Upload your CV (PDF, .txt or .md)', 'Check the profile the app fills in for you', 'Run the search and read the postings, ranked by fit'],
     downloadTitle: 'Download',
@@ -53,7 +53,7 @@ export const messages: Record<Locale, Messages> = {
   it: {
     title: 'openjob, un agente locale per la ricerca di lavoro',
     tagline: 'Trova gli annunci che corrispondono al tuo CV, sul tuo computer.',
-    intro: "openjob legge il tuo CV e valuta gli annunci pubblici rispetto ad esso. La tua chiave resta sul tuo computer, e così il testo del CV, tranne quando chiedi un'analisi: allora il testo va al tuo fornitore di AI. Durante una ricerca, un riepilogo del profilo e ogni annuncio vengono inviati al tuo fornitore di AI per essere valutati.",
+    intro: "openjob legge il tuo CV e valuta gli annunci pubblici rispetto ad esso. La tua chiave è conservata sul tuo computer, e così il testo del CV, tranne quando chiedi un'analisi: allora il testo va al tuo fornitore di AI. Durante una ricerca, un riepilogo del profilo e ogni annuncio vengono inviati al tuo fornitore di AI per essere valutati.",
     howTitle: 'Come funziona',
     steps: ['Carica il tuo CV (PDF, .txt o .md)', "Controlla il profilo che l'app compila per te", 'Avvia la ricerca e leggi gli annunci in ordine di corrispondenza'],
     downloadTitle: 'Scarica',
@@ -80,7 +80,7 @@ export const messages: Record<Locale, Messages> = {
   es: {
     title: 'openjob, un agente local para buscar empleo',
     tagline: 'Encuentra las ofertas que encajan con tu CV, en tu propio ordenador.',
-    intro: 'openjob lee tu CV y puntúa las ofertas públicas según tu perfil. Tu clave se queda en tu ordenador, y también el texto del CV, salvo cuando pides un análisis: entonces el texto va a tu proveedor de IA. Durante una búsqueda, un resumen de tu perfil y cada oferta se envían a tu proveedor de IA para puntuarlas.',
+    intro: 'openjob lee tu CV y puntúa las ofertas públicas según tu perfil. Tu clave se guarda en tu ordenador, y también el texto del CV, salvo cuando pides un análisis: entonces el texto va a tu proveedor de IA. Durante una búsqueda, un resumen de tu perfil y cada oferta se envían a tu proveedor de IA para puntuarlas.',
     howTitle: 'Cómo funciona',
     steps: ['Sube tu CV (PDF, .txt o .md)', 'Revisa el perfil que la app rellena por ti', 'Lanza la búsqueda y lee las ofertas ordenadas por afinidad'],
     downloadTitle: 'Descargar',
