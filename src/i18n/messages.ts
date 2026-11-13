@@ -76,7 +76,7 @@ export const messages: Record<Locale, Messages> = {
       { title: "A backend developer looking for remote work in Europe", text: "Writes Rust and Python, five years of experience, speaks English well. Jobshell keeps the English postings in European remote roles and ranks them by how many of their requirements the CV covers." },
       { title: "A frontend developer who wants to switch to a new stack", text: "Knows React well and is learning Svelte. The postings that ask for Svelte appear with the gap written next to them, so you know what to study before you apply." }
     ],
-    "communityTitle": "An open source community",
+    "communityTitle": "A community of developers",
     "communityText": "Jobshell is free and open source. The code is public: read it, use it, report a problem, or send a change. Developers looking for a job are stronger together, and every improvement reaches everyone who uses the project.",
     "costTitle": "Costs",
     "costText": "The project is free today. Analysing a CV and scoring postings use an AI service that charges per request. If the project ever cannot cover those costs, it will ask for a voluntary contribution, clearly and in advance.",
@@ -138,7 +138,7 @@ export const messages: Record<Locale, Messages> = {
       { title: "Uno sviluppatore backend che cerca lavoro remoto in Europa", text: "Scrive Rust e Python, ha cinque anni di esperienza, parla bene l'inglese. Jobshell tiene gli annunci in inglese per ruoli remoti in Europa e li ordina per quanti requisiti il CV copre." },
       { title: "Uno sviluppatore frontend che vuole cambiare stack", text: "Conosce bene React e sta imparando Svelte. Gli annunci che chiedono Svelte compaiono con la lacuna scritta accanto, così sai cosa studiare prima di candidarti." }
     ],
-    "communityTitle": "Una comunità open source",
+    "communityTitle": "Una community di sviluppatori",
     "communityText": "Jobshell è gratuito e open source. Il codice è pubblico: leggilo, usalo, segnala un problema o proponi una modifica. Chi cerca lavoro è più forte se è unito, e ogni miglioramento arriva a tutti quelli che usano il progetto.",
     "costTitle": "Costi",
     "costText": "Oggi il progetto è gratuito. Analizzare un CV e valutare gli annunci usano un servizio di intelligenza artificiale che addebita ogni richiesta. Se un giorno il progetto non potesse coprire quelle spese, chiederà un contributo volontario, in modo chiaro e in anticipo.",
@@ -200,7 +200,7 @@ export const messages: Record<Locale, Messages> = {
       { title: "Un desarrollador backend que busca trabajo remoto en Europa", text: "Escribe Rust y Python, tiene cinco años de experiencia y habla bien inglés. Jobshell mantiene las ofertas en inglés para puestos remotos en Europa y las ordena según cuántos requisitos cubre el CV." },
       { title: "Un desarrollador frontend que quiere cambiar de stack", text: "Domina React y está aprendiendo Svelte. Las ofertas que piden Svelte aparecen con la carencia escrita al lado, así sabes qué estudiar antes de postularte." }
     ],
-    "communityTitle": "Una comunidad de código abierto",
+    "communityTitle": "Una comunidad de desarrolladores",
     "communityText": "Jobshell es gratuito y de código abierto. El código es público: léelo, úsalo, informa de un problema o propón un cambio. Quien busca trabajo es más fuerte unido, y cada mejora llega a todos los que usan el proyecto.",
     "costTitle": "Costes",
     "costText": "Hoy el proyecto es gratuito. Analizar un CV y puntuar ofertas usa un servicio de inteligencia artificial que cobra por cada petición. Si algún día el proyecto no pudiera cubrir esos gastos, pedirá una contribución voluntaria, de forma clara y con antelación.",
