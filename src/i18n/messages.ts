@@ -26,7 +26,7 @@ export const messages: Record<Locale, Messages> = {
   en: {
     title: 'openjob, a local job search agent',
     tagline: 'Find the job postings that fit your CV, on your own computer.',
-    intro: 'openjob reads your CV and scores public job postings against it. Your profile and your key stay on your computer.',
+    intro: 'openjob reads your CV and scores public job postings against it. Your profile and your key stay on your computer; your CV goes to your AI provider only when you ask for an analysis.',
     howTitle: 'How it works',
     steps: ['Upload your CV (PDF, .txt or .md)', 'Check the profile the app fills in for you', 'Run the search and read the postings, ranked by fit'],
     downloadTitle: 'Download',
@@ -53,7 +53,7 @@ export const messages: Record<Locale, Messages> = {
   it: {
     title: 'openjob, un agente locale per la ricerca di lavoro',
     tagline: 'Trova gli annunci che corrispondono al tuo CV, sul tuo computer.',
-    intro: 'openjob legge il tuo CV e valuta gli annunci pubblici rispetto ad esso. Il tuo profilo e la tua chiave restano sul tuo computer.',
+    intro: "openjob legge il tuo CV e valuta gli annunci pubblici rispetto ad esso. Il tuo profilo e la tua chiave restano sul tuo computer; il CV va al tuo fornitore di AI solo quando chiedi un'analisi.",
     howTitle: 'Come funziona',
     steps: ['Carica il tuo CV (PDF, .txt o .md)', "Controlla il profilo che l'app compila per te", 'Avvia la ricerca e leggi gli annunci in ordine di corrispondenza'],
     downloadTitle: 'Scarica',
@@ -80,7 +80,7 @@ export const messages: Record<Locale, Messages> = {
   es: {
     title: 'openjob, un agente local para buscar empleo',
     tagline: 'Encuentra las ofertas que encajan con tu CV, en tu propio ordenador.',
-    intro: 'openjob lee tu CV y puntúa las ofertas públicas según tu perfil. Tu perfil y tu clave se quedan en tu ordenador.',
+    intro: 'openjob lee tu CV y puntúa las ofertas públicas según tu perfil. Tu perfil y tu clave se quedan en tu ordenador; tu CV va a tu proveedor de IA solo cuando pides un análisis.',
     howTitle: 'Cómo funciona',
     steps: ['Sube tu CV (PDF, .txt o .md)', 'Revisa el perfil que la app rellena por ti', 'Lanza la búsqueda y lee las ofertas ordenadas por afinidad'],
     downloadTitle: 'Descargar',
