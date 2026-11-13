@@ -90,5 +90,14 @@ const languageNames: Record<Locale, string> = { en: 'English', it: 'Italiano', e
         <p><a href={`/${locale}/privacy/`}>{t.privacyLink}</a></p>
       </footer>
     </div>
+    <script is:inline>
+      // Remembers the language the visitor picks, for one year, on this site only.
+      document.querySelectorAll('.langs a').forEach((link) => {
+        link.addEventListener('click', () => {
+          const secure = location.protocol === 'https:' ? '; Secure' : '';
+          document.cookie = `jobshell_lang=${link.lang}; Max-Age=31536000; Path=/; SameSite=Lax${secure}`;
+        });
+      });
+    </script>
   </body>
 </html>

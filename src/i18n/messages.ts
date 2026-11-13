@@ -96,7 +96,7 @@ export const messages: Record<Locale, Messages> = {
     "privacyTitle": "Privacy",
     "privacy": [
       "Who runs this site: the Jobshell maintainers, reachable through the issues page of the repository. No personal data is collected here.",
-      "This website collects no personal data, sets no cookies and loads no third-party scripts, fonts or trackers, so it needs no cookie banner.",
+      "This website collects no personal data and loads no third-party scripts, fonts or trackers. It sets one cookie, jobshell_lang, only when you pick a language: it remembers that choice for one year and is never used to follow you.",
       "The app keeps your profile, your CV and your search results on your computer.",
       "Your AI provider key is stored in your operating system keychain. Only the Jobshell agent reads it, and it is never written to a file.",
       "When you ask the app to analyse your CV, its text is sent once to the AI provider you configured, for that analysis. During a search, a summary of your profile and each job posting are sent to the same provider to be scored; the CV text is not. Job postings come from public sources, and no account is needed.",
@@ -160,7 +160,7 @@ export const messages: Record<Locale, Messages> = {
     "privacyTitle": "Privacy",
     "privacy": [
       "Chi gestisce questo sito: i manutentori di Jobshell, raggiungibili dalla pagina delle issue del repository. Qui non si raccolgono dati personali.",
-      "Questo sito non raccoglie dati personali, non imposta cookie e non carica script, font o tracker di terze parti: per questo non serve un banner dei cookie.",
+      "Questo sito non raccoglie dati personali e non carica script, font o tracker di terze parti. Imposta un solo cookie, jobshell_lang, quando scegli una lingua: ricorda la scelta per un anno e non serve mai a seguirti.",
       "L'app conserva il tuo profilo, il tuo CV e i risultati della ricerca sul tuo computer.",
       "La chiave del fornitore di AI è conservata nel portachiavi del sistema operativo. La legge solo l'agente di Jobshell e non viene mai scritta in un file.",
       "Quando chiedi all'app di analizzare il CV, il suo testo viene inviato una volta al fornitore di AI che hai configurato, solo per quell'analisi. Durante una ricerca, un riepilogo del profilo e ogni annuncio vengono inviati allo stesso fornitore per essere valutati; il testo del CV no. Gli annunci provengono da fonti pubbliche e non serve nessun account.",
@@ -224,7 +224,7 @@ export const messages: Record<Locale, Messages> = {
     "privacyTitle": "Privacidad",
     "privacy": [
       "Quién gestiona este sitio: los mantenedores de Jobshell, a través de la página de issues del repositorio. Aquí no se recogen datos personales.",
-      "Este sitio no recoge datos personales, no instala cookies y no carga scripts, fuentes ni rastreadores de terceros: por eso no hace falta un aviso de cookies.",
+      "Este sitio no recoge datos personales y no carga scripts, fuentes ni rastreadores de terceros. Instala una sola cookie, jobshell_lang, solo cuando eliges un idioma: recuerda esa elección durante un año y nunca sirve para seguirte.",
       "La app guarda tu perfil, tu CV y los resultados de búsqueda en tu ordenador.",
       "La clave de tu proveedor de IA se guarda en el llavero del sistema operativo. La lee solo el agente de Jobshell y nunca se escribe en un archivo.",
       "Cuando pides a la app que analice tu CV, su texto se envía una vez al proveedor de IA que hayas configurado, solo para ese análisis. Durante una búsqueda, un resumen de tu perfil y cada oferta se envían al mismo proveedor para puntuarlas; el texto del CV no. Las ofertas proceden de fuentes públicas y no necesitas cuenta.",

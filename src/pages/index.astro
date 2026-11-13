@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jobshell</title>
     <script is:inline>
-      const supported = ['it', 'es', 'en'];
+      // The language a visitor chose wins; otherwise the browser's languages; otherwise English.
+      const supported = ['en', 'it', 'es'];
+      const saved = (document.cookie.match(/(?:^|; )jobshell_lang=(en|it|es)(?:;|$)/) || [])[1];
       const wanted = (navigator.languages || [navigator.language || 'en']).map((l) => l.slice(0, 2).toLowerCase());
-      const match = wanted.find((l) => supported.includes(l)) || 'en';
+      const match = saved || wanted.find((l) => supported.includes(l)) || 'en';
       location.replace('/' + match + '/');
     </script>
   </head>

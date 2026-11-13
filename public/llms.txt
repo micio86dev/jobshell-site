@@ -1,6 +1,6 @@
 # Jobshell
 
-> Jobshell is a free, open source desktop app for developers who are looking for a job. It reads your CV, scores public job postings against it, and explains why each one fits or does not. Your CV text and your key stay on your computer; during a search, a summary of your profile and each posting are sent to your AI provider to be scored.
+> Jobshell is a free, open source desktop app for developers who are looking for a job. It reads your CV, scores public job postings against it, and explains why each one fits or does not. Your CV text and your key stay on your computer; the site sets one language cookie, only when you choose a language; during a search, a summary of your profile and each posting are sent to your AI provider to be scored.
 
 Jobshell is licensed under Apache-2.0. The source code is on GitHub. The project is free today; if its AI costs ever exceed what it can cover, it will ask for a voluntary contribution, clearly and in advance.
 
