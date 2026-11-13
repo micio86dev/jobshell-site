@@ -50,7 +50,7 @@ export const messages: Record<Locale, Messages> = {
     "heroCta": "Download",
     "heroCtaSecondary": "See how it works",
     termLines: [
-      "$ Jobshell search",
+      "$ jobshell search",
       "  reading CV ............ ok",
       "  postings fetched ..... 538",
       "  kept by your filters .. 114",
@@ -114,7 +114,7 @@ export const messages: Record<Locale, Messages> = {
     "heroCta": "Scarica",
     "heroCtaSecondary": "Scopri come funziona",
     termLines: [
-      "$ Jobshell search",
+      "$ jobshell search",
       "  lettura del CV ........ ok",
       "  annunci recuperati ... 538",
       "  dopo i filtri ........ 114",
@@ -147,7 +147,7 @@ export const messages: Record<Locale, Messages> = {
     "costTitle": "Costi",
     "costText": "Il progetto è gratuito e resta gratuito: ogni utente usa la propria chiave AI, quindi il progetto non paga nessuna chiamata alle API. Ciascun utente paga il proprio fornitore per ciò che usa.",
     "repoCta": "Leggi il codice su GitHub",
-    "contribute": "Hai trovato un bug o un'idea? Apri una issue. Vuoi cambiare qualcosa? Invia una pull request.",
+    "contribute": "Hai trovato un bug o hai un'idea? Apri una issue. Vuoi cambiare qualcosa? Invia una pull request.",
     "downloadTitle": "Scarica",
     "detected": "Consigliato per il tuo sistema",
     "mac": "macOS",
@@ -178,7 +178,7 @@ export const messages: Record<Locale, Messages> = {
     "heroCta": "Descargar",
     "heroCtaSecondary": "Ver cómo funciona",
     termLines: [
-      "$ Jobshell search",
+      "$ jobshell search",
       "  lectura del CV ........ ok",
       "  ofertas recuperadas ... 538",
       "  tras tus filtros ..... 114",
