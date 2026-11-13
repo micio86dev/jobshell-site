@@ -34,6 +34,7 @@ export type Messages = {
   privacyLink: string;
   privacyTitle: string;
   privacy: string[];
+  skip: string;
   language: string;
   openSource: string;
   sourceLink: string;
@@ -42,6 +43,7 @@ export type Messages = {
 /** The texts of the site. Each language has every key; the type checker enforces it. */
 export const messages: Record<Locale, Messages> = {
   en: {
+    "skip": "Skip to content",
     "title": "Jobshell: a local job search agent for developers",
     "tagline": "Find the job postings that fit your CV, on your own computer.",
     "intro": "Jobshell reads your CV, scores public job postings against it, and tells you why each one fits or does not. Built by developers, for developers, and free to read, change and share.",
@@ -93,6 +95,7 @@ export const messages: Record<Locale, Messages> = {
     "privacyLink": "Privacy",
     "privacyTitle": "Privacy",
     "privacy": [
+      "Who runs this site: the Jobshell maintainers, reachable through the issues page of the repository. No personal data is collected here.",
       "This website collects no personal data, sets no cookies and loads no third-party scripts, fonts or trackers, so it needs no cookie banner.",
       "The app keeps your profile, your CV and your search results on your computer.",
       "Your AI provider key is stored in your operating system keychain. Only the Jobshell agent reads it, and it is never written to a file.",
@@ -104,6 +107,7 @@ export const messages: Record<Locale, Messages> = {
     "sourceLink": "Source code"
   },
   it: {
+    "skip": "Vai al contenuto",
     "title": "Jobshell: un agente locale per cercare lavoro da sviluppatore",
     "tagline": "Trova gli annunci che corrispondono al tuo CV, sul tuo computer.",
     "intro": "Jobshell legge il tuo CV, valuta gli annunci pubblici rispetto ad esso e ti dice perché ciascuno corrisponde o no. Fatto da sviluppatori, per sviluppatori, e libero da leggere, modificare e condividere.",
@@ -155,6 +159,7 @@ export const messages: Record<Locale, Messages> = {
     "privacyLink": "Privacy",
     "privacyTitle": "Privacy",
     "privacy": [
+      "Chi gestisce questo sito: i manutentori di Jobshell, raggiungibili dalla pagina delle issue del repository. Qui non si raccolgono dati personali.",
       "Questo sito non raccoglie dati personali, non imposta cookie e non carica script, font o tracker di terze parti: per questo non serve un banner dei cookie.",
       "L'app conserva il tuo profilo, il tuo CV e i risultati della ricerca sul tuo computer.",
       "La chiave del fornitore di AI è conservata nel portachiavi del sistema operativo. La legge solo l'agente di Jobshell e non viene mai scritta in un file.",
@@ -166,6 +171,7 @@ export const messages: Record<Locale, Messages> = {
     "sourceLink": "Codice sorgente"
   },
   es: {
+    "skip": "Saltar al contenido",
     "title": "Jobshell: un agente local para buscar empleo como desarrollador",
     "tagline": "Encuentra las ofertas que encajan con tu CV, en tu propio ordenador.",
     "intro": "Jobshell lee tu CV, puntúa las ofertas públicas según tu perfil y te dice por qué encaja o no cada una. Hecho por desarrolladores, para desarrolladores, y libre para leer, cambiar y compartir.",
@@ -217,6 +223,7 @@ export const messages: Record<Locale, Messages> = {
     "privacyLink": "Privacidad",
     "privacyTitle": "Privacidad",
     "privacy": [
+      "Quién gestiona este sitio: los mantenedores de Jobshell, a través de la página de issues del repositorio. Aquí no se recogen datos personales.",
       "Este sitio no recoge datos personales, no instala cookies y no carga scripts, fuentes ni rastreadores de terceros: por eso no hace falta un aviso de cookies.",
       "La app guarda tu perfil, tu CV y los resultados de búsqueda en tu ordenador.",
       "La clave de tu proveedor de IA se guarda en el llavero del sistema operativo. La lee solo el agente de Jobshell y nunca se escribe en un archivo.",

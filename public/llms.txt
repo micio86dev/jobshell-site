@@ -1,0 +1,22 @@
+# Jobshell
+
+> Jobshell is a free, open source desktop app for developers who are looking for a job. It reads your CV, scores public job postings against it, and explains why each one fits or does not. Your CV text and your key stay on your computer; during a search, a summary of your profile and each posting are sent to your AI provider to be scored.
+
+Jobshell is licensed under Apache-2.0. The source code is on GitHub. The project is free today; if its AI costs ever exceed what it can cover, it will ask for a voluntary contribution, clearly and in advance.
+
+## Pages
+
+- [Home (English)](https://jobshell.dev/en/): what Jobshell does, how it works, examples, download.
+- [Home (Italiano)](https://jobshell.dev/it/): the same page in Italian.
+- [Inicio (Español)](https://jobshell.dev/es/): the same page in Spanish.
+- [Privacy (English)](https://jobshell.dev/en/privacy/): what data stays on the computer and what is sent to the AI provider.
+
+## Facts
+
+- Platforms: macOS, Windows, Linux.
+- Price: free.
+- Languages of the interface: English, Italian, Spanish.
+- Input: a CV as PDF, .txt or .md.
+- Sources: public job feeds and public job pages.
+- Data: the profile, the CV and the results stay on the user's computer. The key is stored in the operating system keychain.
+- Source code: https://github.com/micio86dev/jobshell-site (the website); the application repository is published under micio86dev/jobshell.

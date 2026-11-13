@@ -15,5 +15,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/micio86dev/jobshell-site.git"
+  },
+  "devDependencies": {
+    "axe-core": "4.14.0",
+    "html-validate": "11.17.0"
   }
 }

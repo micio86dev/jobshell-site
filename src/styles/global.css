@@ -12,6 +12,9 @@
   --accent: oklch(0.76 0.17 150);
   --accent-fg: oklch(0.19 0.014 160);
   --accent-soft: oklch(0.28 0.05 150);
+  --cta: oklch(0.46 0.13 150);
+  --cta-hover: oklch(0.52 0.13 150);
+  --cta-fg: oklch(0.99 0.003 150);
   --code-bg: oklch(0.15 0.012 160);
   --focus: oklch(0.82 0.15 150);
   --grid-line: oklch(0.3 0.014 160 / 0.5);
@@ -37,6 +40,9 @@
     --accent: oklch(0.52 0.15 150);
     --accent-fg: oklch(0.99 0.004 150);
     --accent-soft: oklch(0.94 0.04 150);
+  --cta: oklch(0.44 0.13 150);
+  --cta-hover: oklch(0.38 0.13 150);
+  --cta-fg: oklch(0.99 0.003 150);
     --code-bg: oklch(0.94 0.009 160);
     --focus: oklch(0.6 0.16 150);
     --grid-line: oklch(0.9 0.009 160 / 0.6);
@@ -51,6 +57,9 @@
   --accent: oklch(0.52 0.15 150);
   --accent-fg: oklch(0.99 0.004 150);
   --accent-soft: oklch(0.94 0.04 150);
+  --cta: oklch(0.44 0.13 150);
+  --cta-hover: oklch(0.38 0.13 150);
+  --cta-fg: oklch(0.99 0.003 150);
   --code-bg: oklch(0.94 0.009 160);
   --focus: oklch(0.6 0.16 150);
   --grid-line: oklch(0.9 0.009 160 / 0.6);
@@ -118,7 +127,7 @@ code, .mono { font-family: var(--font-mono); font-size: 0.92em; }
   text-decoration: none;
   background: var(--bg);
 }
-.langs a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-fg); }
+.langs a[aria-current="true"] { background: var(--cta); border-color: var(--cta); color: var(--cta-fg); }
 
 main { display: grid; gap: 4.5rem; padding-top: 2rem; padding-bottom: 3rem; }
 main > section { scroll-margin-top: 1rem; }
@@ -150,13 +159,13 @@ p { margin: 0 0 0.9rem; max-width: 66ch; }
   display: inline-block;
   padding: 0.7rem 1.1rem;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--accent);
-  background: var(--accent);
-  color: var(--accent-fg);
+  border: 1px solid var(--cta);
+  background: var(--cta);
+  color: var(--cta-fg);
   font-weight: 650;
   text-decoration: none;
 }
-.btn:hover { filter: brightness(1.06); }
+.btn:hover { background: var(--cta-hover); border-color: var(--cta-hover); color: var(--cta-fg); }
 .btn-ghost { background: transparent; color: var(--accent); }
 .btn-ghost:hover { background: var(--accent-soft); filter: none; }
 
@@ -208,8 +217,8 @@ figcaption { font-size: var(--text-sm); color: var(--fg-muted); margin-top: 0.5r
 .systems { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-wrap: wrap; gap: 0.6rem; }
 .systems li { flex: 1 1 9rem; }
 .systems .btn { display: block; text-align: center; background: var(--bg); color: var(--fg); border-color: var(--border); }
-.systems li.recommended .btn { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
-.systems .btn:hover { filter: none; background: var(--accent-soft); }
+.systems li.recommended .btn { background: var(--cta); color: var(--cta-fg); border-color: var(--cta); }
+.systems .btn:hover { background: var(--accent-soft); color: var(--fg); }
 .notice {
   margin: 0 0 0.75rem;
   padding: 0.6rem 0.8rem;
@@ -235,4 +244,23 @@ figcaption { font-size: var(--text-sm); color: var(--fg-muted); margin-top: 0.5r
   h1 { font-size: 1.8rem; }
   .what li { grid-template-columns: 2.2rem 1fr; }
   .systems li { flex-basis: 100%; }
+}
+
+/* accessibility: the skip link appears on keyboard focus; motion stops for users who ask */
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 10;
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--cta);
+  color: var(--cta-fg);
+  font-weight: 650;
+  text-decoration: none;
+}
+.skip:focus { top: 1rem; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
 }
