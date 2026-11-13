@@ -1,6 +1,6 @@
-# openjob website
+# Jobshell website
 
-Minimal download page for the openjob desktop app, in English, Italian and Spanish.
+Minimal download page for the Jobshell desktop app, in English, Italian and Spanish.
 
 ## Run
 

@@ -1,6 +1,6 @@
 // Where the app is published. Replace OWNER with the GitHub account or organisation before publishing.
 export const APP = {
-  name: 'openjob',
+  name: 'Jobshell',
   repoUrl: 'https://github.com/micio86dev/openjob',
   releasesUrl: 'https://github.com/micio86dev/openjob/releases/latest',
 } as const;
