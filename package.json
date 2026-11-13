@@ -1,5 +1,5 @@
 {
-  "name": "openjob-site",
+  "name": "jobshell-site",
   "private": true,
   "type": "module",
   "version": "0.1.0",
@@ -14,6 +14,6 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/micio86dev/openjob-site.git"
+    "url": "git+https://github.com/micio86dev/jobshell-site.git"
   }
 }
